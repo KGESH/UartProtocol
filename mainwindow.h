@@ -20,14 +20,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
 private slots:
     void OnClickedControlButton();
     void OnClickedStopButton();
+    void OnClickedSerialPortConnectButton();
 
 private:
     Ui::MainWindow *ui;
-
-    SerialPort m_SerialPort;
+    SerialPort *m_SerialPort;
 };
 #endif // MAINWINDOW_H

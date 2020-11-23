@@ -6,6 +6,7 @@ void UartPacket::SetPacketFromString(QString packet)
     m_packet = packet.toUtf8();
 }
 
+
 void UartPacket::SetHeader(const quint8& pre_h, const quint8& pre_l)
 {
     this->m_Pre_h = pre_h;
@@ -33,6 +34,7 @@ void UartPacket::SetData(const quint8& dataH1, const quint8& data2, const quint8
     this->m_DataL4 = dataL4;
 }
 
+
 //void UartPacket::SetData(quint32 data)
 //{
 //    /***  데이터 비트 나누기  ***//
@@ -52,10 +54,55 @@ QByteArray UartPacket::GetPacket() const
 }
 
 
+quint8 UartPacket::GetHeaderHighByte() const
+{
+    return m_Pre_h;
+}
 
 
+quint8 UartPacket::GetHeaderLowByte() const
+{
+    return m_Pre_l;
+}
 
 
+quint8 UartPacket::GetRobotAddress() const
+{
+    return m_Add;
+}
 
 
+quint8 UartPacket::GetCommnad() const
+{
+    return m_Code;
+}
 
+
+quint8 UartPacket::GetDataH1() const
+{
+    return m_DataH1;
+}
+
+
+quint8 UartPacket::GetData2() const
+{
+    return m_Data2;
+}
+
+
+quint8 UartPacket::GetData3() const
+{
+    return m_Data3;
+}
+
+
+quint8 UartPacket::GetDataL4() const
+{
+    return m_DataL4;
+}
+
+
+quint8 UartPacket::GetByteSum() const
+{
+    return m_Sum;
+}
